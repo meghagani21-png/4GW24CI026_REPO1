@@ -35,17 +35,15 @@ struct student *createnode() {
     return newnode;
 }
 
-void createLlist(int n) {
-    for (int i = 0; i < n; i++) {
+void createLlist(int n)
+{
+    for (int i = 0; i < n; i++)
+    {
         struct student *newnode = createnode();
-        if (head == NULL) {
-            head = newnode;
-        } else {
-            struct student *temp = head;
-            while (temp->next != NULL)
-                temp = temp->next;
-            temp->next = newnode;
-        }
+
+        /* Insert at front */
+        newnode->next = head;
+        head = newnode;
     }
 }
 
@@ -146,3 +144,4 @@ int main() {
         }
     }
 }
+
